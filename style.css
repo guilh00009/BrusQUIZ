@@ -289,7 +289,7 @@ body, html {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    margin-bottom: 10vh; /* Reduced from 15vh */
+    margin-bottom: 25vh; /* Increased from 10vh to pull buttons up */
     width: 90%;
     max-width: 400px;
 }
@@ -336,11 +336,15 @@ button {
     }
 
     .menu-content {
-        margin-bottom: 5vh;
+        margin-bottom: 20vh;
     }
 
     .screen {
         padding-bottom: 20px;
+    }
+
+    .option-img {
+        max-height: 8vh;
     }
 
     /* Credits Mobile Adjustments */
