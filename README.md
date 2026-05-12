@@ -1,8 +1,11 @@
 # BrusQUIZ
 
 Técnologias usadas:
+
 -HTML
+
 -CSS
+
 -Javascript
 
 <h1> Integrantes: </h1>
