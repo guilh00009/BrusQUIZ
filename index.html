@@ -13,7 +13,8 @@
 
 <body>
     <div id="game-container">
-        <!-- Main Menu -->
+
+        <!-- ── Menu Principal ── -->
         <div id="menu-screen" class="screen">
             <img src="Assets/Menu/brusquetransparente.png" alt="Logo Brusque" id="menu-logo">
             <img src="Assets/Menu/title.png" alt="BrusQUIZ" id="menu-title">
@@ -23,54 +24,80 @@
             </div>
         </div>
 
-        <!-- Credits Screen -->
+        <!-- ── Tela de Info do Jogador ── -->
+        <div id="info-screen" class="screen hidden">
+            <div class="info-container">
+                <h1 class="info-title jersey-10-regular">Antes de começar!</h1>
+                <input type="text" id="player-name" class="info-input jersey-10-regular" placeholder="Digite seu nome">
+                <input type="text" id="player-school" class="info-input jersey-10-regular" placeholder="Digite sua escola">
+                <div class="info-buttons">
+                    <button id="btn-start-quiz" class="jersey-10-regular">Continuar</button>
+                    <button id="btn-skip-info" class="jersey-10-regular skip-btn">Pular</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ── Créditos ── -->
         <div id="credits-screen" class="screen hidden">
             <h1 class="credits-title jersey-10-regular">Créditos</h1>
             <div class="credits-layout">
                 <img src="Assets/Fimedepoiscredito/imagemdosdoispatos.png" alt="Dois Patos" class="ducks-img">
                 <div class="credits-box">
-                    <p class="jersey-10-regular">Guilherme Keller De Souza - “Backend” e FrontEnd</p>
-                    <p class="jersey-10-regular">Jhonathan werick dos santos silva - Front End</p>
-                    <p class="jersey-10-regular">Kauam Pacheco Fontanela - Organização</p>
-                    <p class="jersey-10-regular">Gabriel Augusto Pinotti - Conteúdo</p>
-                    <p class="jersey-10-regular">Dalton Pavesi - Design</p>
+                    <p class="jersey-10-regular">Guilherme Keller De Souza — "Backend" e FrontEnd</p>
+                    <p class="jersey-10-regular">Jhonathan Werick dos Santos Silva — Front End</p>
+                    <p class="jersey-10-regular">Kauam Pacheco Fontanela — Organização</p>
+                    <p class="jersey-10-regular">Gabriel Augusto Pinotti — Conteúdo</p>
+                    <p class="jersey-10-regular">Dalton Pavesi — Design</p>
                 </div>
             </div>
             <p class="credits-footer jersey-10-regular">clique em qualquer lugar para voltar</p>
-            <!-- Keeping the button hidden but accessible for script logic if needed, or just let click anywhere handle it -->
+            <!-- Mantido oculto por compatibilidade com o script -->
             <button id="btn-voltar-menu" class="jersey-10-regular hidden">← Voltar</button>
         </div>
 
-        <!-- Quiz Screen -->
+        <!-- ── Quiz ── -->
         <div id="quiz-screen" class="screen hidden">
+            <!-- Cabeçalho: número da questão + placar -->
             <div class="quiz-header">
-                <span id="question-number" class="jersey-10-regular">1</span>
+                <span class="jersey-10-regular quiz-counter">
+                    <span id="question-number">1</span>/<span id="question-total">15</span>
+                </span>
+                <span id="score-display" class="jersey-10-regular score-badge">✔ 0</span>
             </div>
+
+            <!-- Pergunta -->
             <div class="question-container">
-                <h2 id="question-text" class="jersey-10-regular">Qual o mascote da fenarreco?</h2>
+                <h2 id="question-text" class="jersey-10-regular">Qual o mascote da Fenarreco?</h2>
             </div>
-            <div id="options-container" class="options-grid">
-                <!-- Options will be generated here -->
-            </div>
+
+            <!-- Opções -->
+            <div id="options-container" class="options-grid"></div>
+
+            <!-- Botão de dica -->
             <button id="help-btn" class="jersey-10-regular">?</button>
         </div>
 
-        <!-- Result Screen -->
+        <!-- ── Resultado ── -->
         <div id="result-screen" class="screen hidden">
             <div class="result-container">
                 <img id="result-image" src="" alt="Resultado" class="result-img">
-                <h2 id="result-percentage" class="jersey-10-regular">100%</h2>
+                <h2 id="result-percentage" class="jersey-10-regular">0%</h2>
+                <div class="result-buttons">
+                    <button id="btn-play-again" class="jersey-10-regular">Jogar Novamente</button>
+                    <button id="btn-go-credits" class="jersey-10-regular btn-secondary">Ver Créditos</button>
+                </div>
             </div>
         </div>
 
-        <!-- Help Popup -->
+        <!-- ── Popup de Dica ── -->
         <div id="help-popup" class="popup hidden">
             <div class="popup-content">
-                <h3 class="jersey-10-regular">Dica:</h3>
+                <h3 class="jersey-10-regular">🦆 Dica:</h3>
                 <p id="hint-text" class="jersey-10-regular"></p>
                 <button id="close-help" class="jersey-10-regular">Fechar</button>
             </div>
         </div>
+
     </div>
     <script src="script.js"></script>
 </body>
